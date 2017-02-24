@@ -3,7 +3,7 @@ Abstract Syntax Tree for the Monkey language interpreter
 */
 package ast
 
-type Node internface {
+type Node interface {
 	TokenLiteral(string)
 }
 
