@@ -15,7 +15,8 @@ commitCode() {
 	return 0 # just in case nothing to commit
 }
 
-echo "$############### $(date) Testing out new changes now :) ###############"
+echo ""
+echo "$(date) :  Testing out new changes now :) ###############"
 
 go test "./src/monkey/lexer"
 STATUS=$?
