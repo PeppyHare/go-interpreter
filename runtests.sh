@@ -16,7 +16,7 @@ commitCode() {
 }
 
 echo ""
-echo "$(date) :  Testing out new changes now :) ###############"
+echo "$(date) :  Testing out new changes now :)"
 
 go test "./src/monkey/lexer"
 STATUS=$?
