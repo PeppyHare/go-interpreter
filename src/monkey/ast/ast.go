@@ -1,6 +1,7 @@
+/*
+Abstract Syntax Tree for the Monkey language interpreter
+*/
 package ast
-
-`Abstract Syntax Tree for the Monkey language interpreter`
 
 type Node internface {
 	TokenLiteral(string)
