@@ -6,7 +6,7 @@ import (
 	"monkey/token"
 )
 
-func TestNextToken(t *testing.T){
+func TestNextToken(t *testing.T) {
 	input := `=+(){},;
 	let five = 5;
 	let ten = 10;
@@ -29,8 +29,8 @@ func TestNextToken(t *testing.T){
 	`
 
 	tests := []struct {
-		expectedType	token.TokenType
-		expectedLiteral	string
+		expectedType    token.TokenType
+		expectedLiteral string
 	}{
 		{token.ASSIGN, "="},
 		{token.PLUS, "+"},
@@ -132,4 +132,3 @@ func TestNextToken(t *testing.T){
 		}
 	}
 }
-

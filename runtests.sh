@@ -4,7 +4,7 @@ export GOPATH="$DIR"
 
 formatCode() {
 	cd "$DIR" || exit
-	gofmt .
+	gofmt -w .
 }
 
 commitCode() {
