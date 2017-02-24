@@ -12,6 +12,7 @@ commitCode() {
 	git status
 	git add .
 	git commit -m "Passing all the tests! Automated commit :)"
+	return 0 # just in case nothing to commit
 }
 
 go test "./src/monkey/lexer"
