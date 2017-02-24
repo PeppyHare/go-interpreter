@@ -11,6 +11,7 @@ commitCode() {
 	cd "$DIR" || exit
 	git diff-index --quiet HEAD --
 	local no_current_changes=$?
+	echo "no_current_changes: $no_current_changes"
 	if [[ $no_current_changes == "0" ]]; then
 		echo "No changes to commit!"
 	else
