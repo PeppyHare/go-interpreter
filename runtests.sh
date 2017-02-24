@@ -9,15 +9,8 @@ formatCode() {
 
 commitCode() {
 	cd "$DIR" || exit
-	git diff-index --quiet HEAD --
-	no_current_changes=$?
-	echo "no_current_changes: $no_current_changes"
-	if [[ $no_current_changes == "0" ]]; then
-		echo "No changes to commit!"
-	else
-		git add .
-		git commit -m "Passing all the tests! Automated commit :)"
-	fi
+	git add .
+	git commit -m "Passing all the tests! Automated commit :)"
 }
 
 go test "./src/monkey/lexer"
