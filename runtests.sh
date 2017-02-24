@@ -8,7 +8,8 @@ commitCode() {
 	git commit -m "Passing all the tests! Automated commit :)"
 }
 
-go test "./src/monkey/lexer"
+go test "./src/monkey/lexer" && \
+ go test "./src/monkey/lexer"
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
 	echo "Passing tests!"
