@@ -1,12 +1,12 @@
 package repl
 
-import {
+import (
 	"bufio"
 	"fmt"
 	"io"
 	"monkey/lexer"
 	"monkey/token"
-}
+)
 
 const PROMPT = "⋊> "
 
