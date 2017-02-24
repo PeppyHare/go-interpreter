@@ -6,6 +6,7 @@ import (
 	"monkey/token"
 )
 
+
 func TestNextToken(t *testing.T){
 	input := `=+(){},;
 	let five = 5;
