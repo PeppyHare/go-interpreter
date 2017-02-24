@@ -1,14 +1,14 @@
 #!/bin/bash -x
-
-export GOPATH="/Users/evan/GitHub/PeppyHare/go-compiler/01"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export GOPATH="$DIR"
 
 commitCode() {
-	cd "/Users/evan/GitHub/PeppyHare/go-compiler" || exit
+	cd "$DIR" || exit
 	git add .
 	git commit -m "Passing all the tests! Automated commit :)"
 }
 
-go test ./lexer
+go test "./src/monkey/lexer"
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
 	echo "Passing tests!"
