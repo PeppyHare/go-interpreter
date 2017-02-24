@@ -7,7 +7,7 @@ import (
 )
 
 func TestNextToken(t *testing.T){
-	input := `=+(){},;
+	input := `=+(){},;;
 	let five = 5;
 	let ten = 10;
 
@@ -39,6 +39,7 @@ func TestNextToken(t *testing.T){
 		{token.LBRACE, "{"},
 		{token.RBRACE, "}"},
 		{token.COMMA, ","},
+		{token.SEMICOLON, ";"},
 		{token.SEMICOLON, ";"},
 		{token.LET, "let"},
 		{token.IDENT, "five"},
