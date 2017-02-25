@@ -5,6 +5,7 @@ Parser for the Monkey language interpreter
 package parser
 
 import (
+	"fmt"
 	"monkey/ast"
 	"monkey/lexer"
 	"monkey/token"
