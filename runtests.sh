@@ -18,13 +18,13 @@ commitCode() {
 echo ""
 echo "$(date) :  Testing out new changes now :)"
 
-go test -v "./..."
+go test -v "./..."| sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/''
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
-	echo "Passing tests!"
+	printf "\033[32mPassing tests!\033[0m"
 	echo "I am in this directory: $(pwd)"
 	formatCode
 	commitCode
 else
-	echo "Not passing tests... :("
+	printf "\033[31mNot passing tests... :(\033[0m"
 fi
