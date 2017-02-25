@@ -18,7 +18,7 @@ commitCode() {
 echo ""
 echo "$(date) :  Testing out new changes now :)"
 
-go test "./..."
+go test -v "./..."
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
 	echo "Passing tests!"
