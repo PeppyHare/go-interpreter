@@ -9,8 +9,8 @@ formatCode() {
 
 commitCode() {
 	cd "$DIR" || exit
-	git status
 	git add .
+	git status
 	git commit -m "Passing all the tests! Automated commit :)"
 	return 0 # just in case nothing to commit
 }
