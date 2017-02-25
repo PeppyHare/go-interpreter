@@ -1,6 +1,7 @@
 /*
 Abstract Syntax Tree for the Monkey language interpreter
 */
+
 package ast
 
 import "monkey/token"
