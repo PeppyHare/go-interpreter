@@ -1,37 +1,64 @@
-/*
-Parser for the Monkey language interpreter
-*/
-
 package parser
 
 import (
 	"monkey/ast"
 	"monkey/lexer"
-	"monkey/token"
+	"testing"
 )
 
-type Parser struct {
-	l *lexer.Lexer
+func TestLetStatements(t *testing.T) {
+	input := `
+let x = 5;
+let y = 10;
+let foobar = 96458;
+`
+	l := lexer.New(input)
+	p := New(l)
 
-	curToken  token.Token
-	peekToken token.Token
+	program := p.ParseProgram()
+	if program == nil {
+		t.Fatalf("ParseProgram() returned nil")
+	}
+	if len(program.Statements) != 3 {
+		t.Fatalf("program.Statements does not contain 3 statements. got=%d", len(program.Statements))
+	}
+
+	tests := []struct {
+		expectedIdentifier string
+	}{
+		{"x"},
+		{"y"},
+		{"foobar"},
+	}
+
+	for i, tt := range tests {
+		stmt := program.Statements[i]
+		if !testLetStatement(t, stmt, tt.expectedIdentifier) {
+			return
+		}
+	}
 }
 
-func New(l *lexer.Lexer) *Parser {
-	p := &Parser{l: l}
+func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
+	if s.TokenLiteral() != "let" {
+		t.Errorf("s.TokenLiteral not 'let'. got=%q", s.TokenLiteral())
+		return false
+	}
 
-	// Read two tokens, so curToken and peekToken are both set
-	p.nextToken()
-	p.nextToken()
+	letStmt, ok := s.(*ast.LetStatement)
+	if !ok {
+		t.Errorf("s not *ast.LetStatement. got=%T", s)
+		return false
+	}
 
-	return p
-}
+	if letStmt.Name.Value != name {
+		t.Errorf("letStmt.Name.Value not '%s'. got=%s", name, letStmt.Name)
+		return false
+	}
 
-func (p *Parser) nextToken() {
-	p.curToken = p.peekToken
-	p.peekToken = p.l.NextToken()
-}
+	if letStmt.Name.TokenLiteral() != name {
+		t.Errorf("s.Name not '%s'. got=%s", name, letStmt.Name)
+	}
 
-func (p *Parser) parseProgram() *ast.Program {
-	return nil
+	return true
 }

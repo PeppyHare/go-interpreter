@@ -6,7 +6,7 @@ package ast
 import "monkey/token"
 
 type Node interface {
-	TokenLiteral(string)
+	TokenLiteral() string
 }
 
 type Statement interface {
@@ -18,7 +18,6 @@ type Expression interface {
 	Node
 	expressionNode()
 }
-
 type Program struct {
 	Statements []Statement
 }
