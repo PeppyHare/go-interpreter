@@ -18,7 +18,7 @@ commitCode() {
 echo ""
 echo "$(date) :  Testing out new changes now :)"
 
-go test -v "./..."| sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/''
+go test -v "./..."
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
 	printf "\033[32mPassing tests!\033[0m\n"
