@@ -4,6 +4,7 @@ export GOPATH="$DIR"
 
 formatCode() {
 	cd "$DIR" || exit
+	printf "\033[32mApplying gofmt...\033[0m\n"
 	gofmt -w .
 }
 
@@ -12,6 +13,7 @@ commitCode() {
 	git add .
 	git status
 	git commit -m "Passing all the tests! Automated commit :)"
+	printf "\033[32mChanges added to a new commit :)\033[0m\n\n"
 	return 0 # just in case nothing to commit
 }
 
