@@ -56,11 +56,6 @@ func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
 func (i *Identifier) String() string       { return i.Value }
 
-type ReturnStatement struct {
-	Token       token.Token // the 'return' token
-	ReturnValue Expression
-}
-
 type LetStatement struct {
 	Token token.Token
 	Name  *Identifier
@@ -83,6 +78,11 @@ func (ls *LetStatement) String() string {
 	out.WriteString(";")
 
 	return out.String()
+}
+
+type ReturnStatement struct {
+	Token       token.Token // the 'return' token
+	ReturnValue Expression
 }
 
 func (rs *ReturnStatement) statementNode()       {}
