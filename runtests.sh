@@ -1,4 +1,16 @@
 #!/bin/bash -x
+# 
+# The object of this is to
+#  - quickly run all go tests
+#  - gofmt the code
+#  - create a new git commit if all of the tests are passing
+# 
+# In general, while working on the project, I will use https://github.com/cespare/reflex to run the tests passively while I make changes. From this working directory, I can run:
+# 
+# $ reflex bash runtests.sh
+# 
+# This will watch for any file modifications in the project, and re-run the tests (and possibly commit the code) when they occur (wow such TDD)
+# 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export GOPATH="$DIR"
 
