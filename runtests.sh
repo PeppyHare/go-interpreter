@@ -25,7 +25,7 @@ commitCode() {
 	git add .
 	git status
 	git commit
-	printf "\033[32mChanges added to a new commit :)\033[0m\n\n"
+	printf "\033[32mEverything's looking good :)\033[0m\n\n"
 	return 0 # just in case nothing to commit
 }
 
