@@ -24,7 +24,7 @@ commitCode() {
 	cd "$DIR" || exit
 	git add .
 	git status
-	git commit -m "Passing all the tests! Automated commit :)"
+	git commit
 	printf "\033[32mChanges added to a new commit :)\033[0m\n\n"
 	return 0 # just in case nothing to commit
 }
