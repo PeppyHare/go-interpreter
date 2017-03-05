@@ -24,10 +24,8 @@ commitCode() {
 	cd "$DIR" || exit
 	git add .
 	git status
-	git commit
-    git push
+	git commit && git push
     printf "\033[32mEverything's looking good :)\033[0m\n\n"
-	return 0 # just in case nothing to commit
 }
 
 echo ""
