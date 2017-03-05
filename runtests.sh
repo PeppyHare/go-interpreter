@@ -36,9 +36,9 @@ formatCode
 go test -v "./..."
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
-	printf "\033[32mPassing tests!\033[0m\n"
-	echo "I am in this directory: $(pwd)"
-	commitCode
+    printf "\033[32mPassing tests!\033[0m\n"
+    echo "I am in this directory: $(pwd)"
+    commitCode
 else
-	printf "\033[31mNot passing tests... :(\033[0m"
+    printf "\033[31mNot passing tests... :(\033[0m"
 fi
