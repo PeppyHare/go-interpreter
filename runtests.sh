@@ -32,7 +32,7 @@ echo ""
 echo "$(date) :  Testing out new changes now :)"
 
 formatCode
-go test -v "./..."
+go test -cover "./..."
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
     printf "\033[32mPassing tests!\033[0m\n"
