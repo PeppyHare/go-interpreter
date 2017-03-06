@@ -39,5 +39,5 @@ if [[ $STATUS == "0" ]]; then
     echo "I am in this directory: $(pwd)"
     commitCode
 else
-    printf "\033[31mNot passing tests... :(\033[0m"
+    printf "\033[31mNot passing tests... :(\033[0m\n"
 fi
