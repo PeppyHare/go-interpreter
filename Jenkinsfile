@@ -1,10 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('a') {
+    stage('Tests') {
       steps {
         sh '''#!/bin/bash -ex
-echo hi'''
+sudo apt-get install -y golang-go
+bash ./runtests.sh
+'''
       }
     }
   }
